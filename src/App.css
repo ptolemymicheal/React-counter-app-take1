@@ -2,12 +2,20 @@
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.display{
+.display {
   margin-top: 50px;
   margin-bottom: 20px;
- 
+  font-weight: bold;
 }
-.buttons{
+.inputValue {
+  width: 200px;
+  border-color: palegreen;
+  outline: palegreen;
+  height: 35px;
+  margin: 5px;
+  border-radius: 12px;
+}
+.buttons {
   width: 200px;
   outline: none;
   height: 40px;
@@ -15,14 +23,24 @@
   margin: 5px;
   border-radius: 12px;
 }
-#plus{
+#plus {
   background-color: palegreen;
 }
-#minus{
-  
+#minus {
   background-color: rgb(253, 169, 136);
 }
-#reset{
-
+#reset {
   background-color: red;
-} 
+}
+.oops-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page{
+  font-size: large;
+  text-align: center;
+}
+.Oops{
+color: coral;
+}
