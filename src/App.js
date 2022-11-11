@@ -1,30 +1,49 @@
 
 import './App.css';
-import React, { useState } from 'react';
+import Counter from './counter';
+import React from 'react';
 
-
+class ErrorBoundary extends React.Component {  
+  constructor(props) {  
+    super(props);  
+    this.state = { error: false, errorInfo: null };  
+  }  
+    
+  componentDidCatch(error, errorInfo) {  
+    
+    this.setState({  
+      error: error,  
+      errorInfo: errorInfo  
+    })  
+  }  
+    
+  render() {  
+    if (this.state.errorInfo) {  
+      return (  
+        <div>  
+          <h1 oops-page><span>Oops </span>something went wrong.</h1>  
+          <details>  
+            {this.state.error && this.state.error.toString()}  
+            <br />  
+            {this.state.errorInfo.componentStack}  
+          </details>  
+        </div>  
+      );  
+    }  
+    return this.props.children;  
+  }    
+}  
 function App() {
-  const [count, setCount] = useState(0);
-  const reset = 0
-
-
 
   return (
-    
-      <div className="App">
-        <div className='display'>Count: {count}</div>
-        <div>
-          <input type='number' className='inputValue' placeholder='input a number here' value={count} onChange={(e) => setCount(e.target.value)} /> 
-        </div>
-        <div><button className='buttons' id='plus' onClick={() => setCount(count +1)}>Increment</button></div>
-        <div><button className='buttons' id='minus' onClick={() => setCount(count -1)}>Decrement</button></div>
-        <div><button className='buttons' id='reset' onClick={() => setCount(reset)}>Reset</button></div>
-       
-      </div>
-    
-
-   
+    <div className="">
+      <ErrorBoundary>
+      <Counter />
+      </ErrorBoundary>
+    </div>
   );
 }
+
+
 
 export default App;
