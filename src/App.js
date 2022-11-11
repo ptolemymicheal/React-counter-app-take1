@@ -19,7 +19,7 @@ function App() {
         <div><button className='buttons' id='plus' onClick={() => setCount(count + 1)}>Increment</button></div>
         <div><button className='buttons' id='minus' onClick={() => setCount(count - 1)}>Decrement</button></div>
         <div><button className='buttons' id='reset' onClick={() => setCount(reset)}>Reset</button></div>
-       //<div><PageNotFound/></div>
+       
       </div>
     
 
