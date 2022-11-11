@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <ErrorBoundary>
+    
       <div className="App">
         <div className='display'>Count: {count}</div>
         <div>
@@ -23,7 +23,7 @@ function App() {
         <div><button className='buttons' id='reset' onClick={() => setCount(reset)}>Reset</button></div>
         <div><PageNotFound/></div>
       </div>
-    </ErrorBoundary>
+    
 
    
   );
